@@ -8,13 +8,34 @@ System to manager your money with simples interations
 
 ### Requirements
 
-- [ ] Authentication and Authorizarion
-- [ ] Register your banks
-- [ ] Register your bank account balance
+- [x] Authentication and Authorizarion
+- [x] Register your banks
+- [x] Register your bank account balance
+- [x] Register your charges
 - [ ] Monitor bank information using chats
-- [ ] Register your charges
 - [ ] Monitor your charges and payouts
 
-### Contribuition
+### Getting Started
 
-_WIP_
+Instalação das dependências desse projeto é recomendado ser com o `npm`
+
+```bash
+npm install
+```
+
+### Rodar o projeto em desenvolvimento
+
+Inicialização do banco de dados
+
+```bash
+npx prisma db push
+```
+
+Iniciar a aplicação
+
+```bash
+npm run dev
+
+```
+
+Acesse http://localhost:3000 :tada
