@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/acmesquita/nookmoney/blob/main/packages/ui/assets/logo.png" alt="nookmoney" width="350px" />
+  <img src="https://github.com/acmesquita/nookmoney/blob/main/public/assets/logo.png" alt="nookmoney" width="350px" />
 </p>
 
 ---
