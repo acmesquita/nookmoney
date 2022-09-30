@@ -23,19 +23,26 @@ Instalação das dependências desse projeto é recomendado ser com o `npm`
 npm install
 ```
 
-### Rodar o projeto em desenvolvimento
+### Running project
 
-Inicialização do banco de dados
+**Pre-install**
+
+This project need `docker` installed successful.
+
+> Initialize database
 
 ```bash
+docker compose up
+```
+```
 npx prisma db push
 ```
 
-Iniciar a aplicação
+> Start application
 
 ```bash
 npm run dev
 
 ```
 
-Acesse http://localhost:3000 :tada
+Access http://localhost:3000 :tada

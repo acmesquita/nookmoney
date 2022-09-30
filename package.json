@@ -1,5 +1,8 @@
 {
   "private": true,
+  "name": "nookmoney",
+  "description": "",
+  "license": "MIT",
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
