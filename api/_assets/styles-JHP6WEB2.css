@@ -1,0 +1,22 @@
+.menu-bar {
+  width: 256px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 32px 16px;
+
+  background-color: #1f2f6f;
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  color: ;
+}

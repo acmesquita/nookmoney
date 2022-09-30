@@ -1,0 +1,8 @@
+.header-page {
+  display: flex;
+  max-width: 1300px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+
+}

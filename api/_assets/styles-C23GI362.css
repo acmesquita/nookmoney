@@ -1,0 +1,32 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field > label {
+  font-size: 10px;
+  color: #101842;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.field > input {
+  padding: 8px 16px;
+  border: none;
+  box-shadow: 0px 0px 3px 0.5px #1f2f6f;
+  border-radius: 4px;
+  outline: none;
+}
+
+
+.field:has(span) {
+  box-shadow: 0px 0px 3px 0.5px red;
+}
+
+span.error:not(.error:empty) {
+  color: red;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}

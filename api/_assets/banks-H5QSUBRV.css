@@ -1,0 +1,11 @@
+.header-page {
+  display: flex;
+  min-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.btn {
+  width: 150px;
+}

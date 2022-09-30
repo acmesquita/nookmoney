@@ -1,0 +1,72 @@
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.title {
+  font-size: 24px;
+  color: #1f2f6f;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #1f2f6f;
+  font-weight: 500;
+}
+
+.resumes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+
+  padding: 32px 64px;
+}
+
+.card {
+  width: 350px;
+  height: 125px;
+  padding: 24px 16px;
+  box-shadow: 1px 4px 10px 1px #1f2f6f;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card > h3 {
+  font-size: 28px;
+  font-weight: 300;
+  color: #9b9bb0;
+}
+
+
+.card > h3 > small {
+  font-size: 10px;
+}
+
+.card > p {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+  color: #1f2f6f;
+}
+
+.pendencies {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  margin-top: 32px;
+}
+
+.pendencie-item {
+  font-size: 18px;
+  font-weight: 300;
+  color: #1f2f6f;
+}

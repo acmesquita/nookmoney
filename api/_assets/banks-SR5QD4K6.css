@@ -1,0 +1,16 @@
+.header-page {
+  display: flex;
+  min-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  width: 150px;
+}

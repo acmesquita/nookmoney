@@ -1,0 +1,16 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field > label {
+  font-size: 10px;
+}
+
+.field > input {
+  padding: 8px 16px;
+  border: none;
+  box-shadow: 1px 4px 10px 1px #1f2f6f;
+  border-radius: 4px;
+}

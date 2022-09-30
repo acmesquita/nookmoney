@@ -1,0 +1,27 @@
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+
+  background-color: #fcfcfc;
+  box-shadow: 1px 4px 10px 1px #1f2f6f;
+
+  padding: 0 16px;
+}
+
+.logo > img {
+  width: 210px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 54px;
+  }
+
+  .logo > img{
+    width: 150px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,28 @@
+.card {
+  width: 100%;
+  height: auto;
+  padding: 24px 16px;
+  box-shadow: 0px 2px 8px 0px #1f2f6f;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newBankForm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.newBankForm > .btn {
+  align-self: flex-end;
+  width: 150px;
+}
+
+.fields  {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
