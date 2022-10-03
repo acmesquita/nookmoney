@@ -27,7 +27,16 @@ npm install
 
 **Pre-install**
 
-Configure the `.env` file by copying and applying environment variables
+Configure the `.env` file by copying and applying environment variables:
+
+```bash
+touch .env
+```
+```env
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432"
+SESSION_SECRET="YOUR_SECRET_FRASE"
+NODE_ENV="production"
+```
 
 This project need `docker` installed successful.
 
