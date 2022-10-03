@@ -45,11 +45,8 @@ This project need `docker` installed successful.
 ```bash
 docker compose up
 ```
-```
-npx prisma db push
-```
 
-> Start application
+> Start application with schema database
 
 ```bash
 npm run dev
