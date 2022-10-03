@@ -6,7 +6,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "dev": "npx prisma db push && remix dev"
+    "db:push": "npx prisma db push",
+    "dev": "remix dev"
   },
   "dependencies": {
     "@prisma/client": "^4.3.1",
