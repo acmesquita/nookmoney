@@ -27,6 +27,8 @@ npm install
 
 **Pre-install**
 
+Configure the `.env` file by copying and applying environment variables
+
 This project need `docker` installed successful.
 
 > Initialize database
