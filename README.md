@@ -17,7 +17,7 @@ System to manager your money with simples interations
 
 ### Getting Started
 
-Instalação das dependências desse projeto é recomendado ser com o `npm`
+Installation of this project's dependencies is recommended to be with `npm`
 
 ```bash
 npm install
