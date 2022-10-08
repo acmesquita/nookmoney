@@ -24,6 +24,7 @@ type Props = {
 
 export function Payments({ payments, infos }: Props) {
 	const navigate = useNavigate()
+	const currentMonth = new Date().toLocaleDateString('en')
 
 	function handle(date: Date) {
 		const monthValue = date.getMonth() + 1
@@ -35,7 +36,7 @@ export function Payments({ payments, infos }: Props) {
 		<MainWithHeader
 			title="Payments"
 			actions={[
-				{ to: '', className: '', title: '09/01/2022', handle },
+				{ to: '', className: '', title: currentMonth, handle },
 				{ to: 'new', className: "btn btn-primary", title: 'New Payment' },
 			]}
 		>

@@ -6,20 +6,22 @@ import { Payments } from "~/pages/payments";
 import { LoadPayments } from "~/services/payments/load";
 import paymentsStyles from '../../styles/pages/payments.css';
 
+type InfoProps = {
+  avg: {
+    period: string
+    amount: number
+  },
+  summary: {
+    month: string
+    total: number
+    paid: number
+    owing: number
+  }
+}
+
 type LoaderDataProps = {
 	payments: Payment[] | null
-	infos: {
-		avg: {
-			period: string
-			amount: string
-		},
-		summary: {
-			month: string
-			total: string
-			paid: string
-			owing: string
-		}
-	}
+	infos: InfoProps
 }
 
 
@@ -63,5 +65,10 @@ export const loader: LoaderFunction = async ({ request }) => {
 export default function PaymentsPage() {
   const {payments, infos} = useLoaderData<LoaderDataProps>()
 
-  return <Payments payments={payments as unknown as Payment[]} infos={infos}/>
+  return (
+    <Payments
+      payments={payments as unknown as Payment[]}
+      infos={infos as unknown as InfoProps}
+    />
+  )
 }
