@@ -15,7 +15,7 @@ export const NewPayment = ({ schema, userId }: Props) => {
     <MainWithHeader
       title="New Payment"
       actions={[
-        { to: '/payments', className: 'btn btn-secundary', title: 'Voltar' }
+        { to: '/payments', className: 'btn btn-secundary', title: 'Back' }
       ]}
     >
       <div className="card">

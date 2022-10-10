@@ -12,7 +12,7 @@ export function UpdateAmount({ banks }: Props) {
     <MainWithHeader
       title="Update Amount"
       actions={[
-        { to: '/banks', className: 'btn btn-secundary', title: 'Voltar' }
+        { to: '/banks', className: 'btn btn-secundary', title: 'Back' }
       ]}
     >
       <div className="card">

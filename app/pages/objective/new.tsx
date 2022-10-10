@@ -6,36 +6,34 @@ type Props = {
   userId: string
 }
 
-export function NewBank({ schema, userId }: Props) {
+export function NewObjective({ schema, userId }: Props) {
   return (
-    <MainWithHeader title="New Bank" actions={[
-      { to: "/banks", className: "btn btn-secundary", title: 'Back' }
-    ]}>
+    <MainWithHeader
+      title="New Objective"
+      actions={[
+        { to: '/objective', className: 'btn btn-secundary', title: 'Back' }
+      ]}
+    >
       <div className="card">
-        <Form schema={schema} className="newBankForm">
+        <Form schema={schema} className="newObjectiveForm">
           {({ Field, Errors, Button, register }) => (
             <>
               <div className="fields">
-              <input {...register('userId')} hidden value={userId} />
-                <Field name="name">
+                <input {...register('userId')} hidden value={userId} />
+                <Field name="describe">
                   {({ errors, Label }) => (
                     <div className="field">
                       <Label />
-                      <input {...register('name')} className={errors?.length ? 'error' : ''} autoComplete="off" />
+                      <input {...register('describe')} className={errors?.length ? 'error' : ''} autoComplete="off" />
                       {errors && errors.map(error => (<span key={error} className="error">{error}</span>))}
                     </div>
                   )}
                 </Field>
-                <Field name="category">
+                <Field name="amount">
                   {({ errors, Label }) => (
                     <div className="field">
                       <Label />
-                      <select {...register('category')} className={errors?.length ? 'error' : ''} >
-                        <option value="conta_corrente">Conta Corrente</option>
-                        <option value="conta_poupanca">Conta Poupança</option>
-                        <option value="investimento">Investimento</option>
-                        <option value="corretora">Corretora</option>
-                      </select>
+                      <input {...register('amount')} type="number" step="0.01" className={errors?.length ? 'error' : ''} autoComplete="off" />
                       {errors && errors.map(error => (<span key={error} className="error">{error}</span>))}
                     </div>
                   )}
@@ -49,4 +47,4 @@ export function NewBank({ schema, userId }: Props) {
       </div>
     </MainWithHeader>
   )
-}
+} 

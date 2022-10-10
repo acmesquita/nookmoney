@@ -16,7 +16,7 @@ export function Bank({ bank }: Props) {
     <MainWithHeader
       title={bank.name}
       actions={[
-        {to: '/banks', className: 'btn btn-secundary', title: 'Voltar'},
+        {to: '/banks', className: 'btn btn-secundary', title: 'Back'},
         {to: 'delete', className: 'btn btn-secundary btn-danger', title: 'Deletar'},
         {to: 'edit', className: 'btn btn-primary', title: 'Editar'}
       ]}
