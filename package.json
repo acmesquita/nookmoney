@@ -7,7 +7,7 @@
     "build": "remix build",
     "db:push": "npx prisma db push",
     "dev": "remix dev",
-    "postinstall": "npx prisma db push --force-reset"
+    "postinstall": "npx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^4.4.0",
