@@ -37,10 +37,10 @@ export function links() {
 export const loader: LoaderFunction = async ({ request }) => {
 
   const monthValue = new Date().getMonth() + 1
-  const currentMonth = `${monthValue.toString().padStart(2, '0')}/${new Date().getFullYear()}`
-  const month = request.url.split('?')[1]?.split('=')[1].replace('%2F', '/') || currentMonth
+  const currentMonth = `${new Date().getFullYear()}-${monthValue.toString().padStart(2, '0')}`
+  const month = request.url.split('?')[1]?.split('=')[1].replace('%2F', '-') || currentMonth
   
-  const payments = await new LoadPayments(db).execute({ month: `01/${month}` }) || []
+  const payments = await new LoadPayments(db).execute({ month: `${month}-01` }) as Payment[]
   const total = payments?.map(pay => pay.amount).reduce((p1, p2) => Number(p1) + Number(p2), 0) || 0
   const paid =  payments?.filter(pay => pay.paid).map(pay => pay.amount).reduce((p1, p2) => Number(p1) + Number(p2), 0) || 0
   const owing =  payments?.filter(pay => !pay.paid).map(pay => pay.amount).reduce((p1, p2) => Number(p1) + Number(p2), 0) || 0

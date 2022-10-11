@@ -23,7 +23,7 @@ export function Objective({ goal }: Props) {
 					{goal ? (
 						<>
 							<h2 className="title">{goal.describe}</h2>
-							<GoalRange value={goal.percent} endValue={goal.amount} />
+							<GoalRange value={goal.percent} endValue={Number(goal.amount)} />
 						</>
 					) : (
 						<h2 className="title">Create a new objective</h2>

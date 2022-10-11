@@ -1,4 +1,10 @@
+import type { LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { db } from "~/config/database/db.server";
+import { getUserId } from "~/config/session/session.server";
 import { Objective } from "~/pages/objective";
+import { LoadTotalBanks } from "~/services/banks/loadTotal";
+import { LoadGoal } from "~/services/objective/load";
 import objeciveStyles from '~/styles/pages/objective.css';
 
 export function links() {
@@ -10,6 +16,20 @@ export function links() {
   ]
 }
 
+export const loader: LoaderFunction = async ({ request }) => {
+  const userId = await getUserId(request) || ""
+  const goal = await new LoadGoal(db).execute({ userId })
+  const totalValueBank = await new LoadTotalBanks(db).execute()
+  const percent = (Number(totalValueBank) / Number(goal?.amount)) * 100
+
+  return {
+    ...goal,
+    percent
+  }
+}
+
 export default function ObjectivePage() {
-  return <Objective />
+  const goal = useLoaderData()
+
+  return <Objective goal={goal}/>
 }

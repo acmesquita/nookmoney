@@ -17,7 +17,8 @@ export class CreateUser {
       data: {
         name,
         username,
-        passwordHash
+        passwordHash,
+        goalId: ''
       }
     })
   }

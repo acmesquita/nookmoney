@@ -19,9 +19,11 @@ const schema = z.object({
 })
 
 const mutation = makeDomainFunction(schema)(async (data) => {
+  const dateSplit = data.currentMonth.split('-')
+  const currentMonth = `${dateSplit[1]}-${dateSplit[0]}-01`
   const payment = new CreatePayment(db).execute({
     amount: Number(data.amount),
-    currentMonth: `01/${data.currentMonth}`,
+    currentMonth,
     category: data.category,
     description: data.description,
     dueDate: data.dueDate,

@@ -1,7 +1,7 @@
 import type { Payment } from "@prisma/client";
 import { useNavigate } from "@remix-run/react";
 import { MainWithHeader } from "~/components/page_header";
-import { formateDate } from "~/utils/pages/format_date";
+import { formateDate, formatMonth } from "~/utils/pages/format_date";
 import { formatMoney } from "~/utils/pages/format_money";
 import type { Kind } from "~/utils/pages/payments/parseCategory";
 import { parseCategory } from "~/utils/pages/payments/parseCategory";
@@ -24,11 +24,11 @@ type Props = {
 
 export function Payments({ payments, infos }: Props) {
 	const navigate = useNavigate()
-	const currentMonth = new Date().toLocaleDateString('en')
-
+	const monthValue = new Date().getMonth() + 1
+	const currentMonth = `${new Date().getFullYear()}-${monthValue.toString().padStart(2, '0')}`
 	function handle(date: Date) {
 		const monthValue = date.getMonth() + 1
-		const month = `${monthValue.toString().padStart(2, '0')}/${date.getFullYear()}`
+		const month = `${date.getFullYear()}-${monthValue.toString().padStart(2, '0')}`
 		navigate(`/payments?month=${month}`, { state: { month } })
 	}
 
@@ -51,7 +51,7 @@ export function Payments({ payments, infos }: Props) {
 				<div className="card">
 					<div>
 						<h3>Summary</h3>
-						<small>{infos.summary.month}</small>
+						<small>{formatMonth(new Date(`${infos.summary.month}-01T03:00:00`))}</small>
 					</div>
 					<div className="values">
 						<p className="default">{formatMoney(infos.summary.total)} <small>(total)</small></p>

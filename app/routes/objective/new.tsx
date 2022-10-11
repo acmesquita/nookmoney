@@ -3,8 +3,10 @@ import { useLoaderData } from "@remix-run/react";
 import { makeDomainFunction } from "remix-domains";
 import { formAction } from "remix-forms";
 import { z } from "zod";
+import { db } from "~/config/database/db.server";
 import { getUserId } from "~/config/session/session.server";
 import { NewObjective } from "~/pages/objective/new";
+import { CreateGoal } from "~/services/objective/create";
 import objeciveNewStyles from '~/styles/pages/objective.new.css';
 
 const schema = z.object({
@@ -14,9 +16,9 @@ const schema = z.object({
 })
 
 const mutation = makeDomainFunction(schema)(async (data) => {
-  // const bank = await new CreateBank(db).execute(data)
+  const goal = await new CreateGoal(db).execute(data)
 
-  return {}
+  return goal
 })
 
 export const action: ActionFunction = async ({ request }) => {

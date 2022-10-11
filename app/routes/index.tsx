@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     return redirect('/sign_in')
   }  
 
-  return getInfoToDashboard()
+  return await getInfoToDashboard(user.id)
 }
 
 export default function DashboardPage() {
