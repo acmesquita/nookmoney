@@ -20,7 +20,7 @@ export const getInfoToDashboard = async (userId: string) => {
         amount: payments?.amount
       },
       objetive: {
-        amount: goal?.amount,
+        amount: goal?.amount || 0,
         percentComplited: percent
       }
     },
