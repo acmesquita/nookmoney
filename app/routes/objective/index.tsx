@@ -19,8 +19,13 @@ export function links() {
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request) || ""
   const goal = await new LoadGoal(db).execute({ userId })
+
+  if (!goal) {
+    return {}
+  }
+
   const totalValueBank = await new LoadTotalBanks(db).execute()
-  const percent = (Number(totalValueBank) / Number(goal?.amount)) * 100
+  const percent = (Number(totalValueBank) / Number(goal.amount)) * 100
 
   return {
     ...goal,
