@@ -1,5 +1,4 @@
 import { db } from '~/config/database/db.server'
-import data from '~/mocks/dashboard.json'
 import { LoadTotalBanks } from '../banks/loadTotal'
 import { LoadGoal } from '../objective/load'
 import { LoadPayments } from '../payments/load'

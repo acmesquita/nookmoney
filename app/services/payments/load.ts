@@ -53,8 +53,8 @@ export class LoadPayments {
     })
 
     return {
-      currentMonth: formatMonth(result[0]?.currentMonth),
-      amount: Number(result[0]?._sum.amount)
+      currentMonth: result[0] ? formatMonth(result[0]?.currentMonth) : '',
+      amount: Number(result[0]?._sum.amount) || 0
     }
   }
 }
