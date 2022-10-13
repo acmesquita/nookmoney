@@ -6,6 +6,7 @@ import { FindBanks } from "~/services/banks";
 import { useLoaderData } from "@remix-run/react";
 import { db } from "~/config/database/db.server";
 import type { Bank } from "@prisma/client";
+import { getUserId } from "~/config/session/session.server";
 
 export function links() {
   return [
@@ -21,8 +22,9 @@ type LoaderData = {
   banks: Bank[]
 }
 
-export const loader: LoaderFunction = async () => {
-  const banks = await new FindBanks(db).execute({})
+export const loader: LoaderFunction = async ({ request }) => {
+  const userId = await getUserId(request) || ''
+  const banks = await new FindBanks(db).execute({ userId })
   const sumAmounts = (b1: any, b2: any) => Number(b1) + Number(b2)
   const total_amount = banks instanceof Array ? banks.map(b => b.amount).reduce(sumAmounts, 0) : 0
   

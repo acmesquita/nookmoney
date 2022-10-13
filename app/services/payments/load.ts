@@ -3,8 +3,7 @@ import { formatMonth } from "~/utils/pages/format_date";
 
 type LoadProps = {
   month?: string
-  id?: string
-  userId?: string
+  userId: string
 }
 
 type LoadReturnProps = {
@@ -15,20 +14,20 @@ type LoadReturnProps = {
 export class LoadPayments {
   constructor(private readonly db: PrismaClient) { }
 
-  async execute({ id, month, userId }: LoadProps): Promise<Payment[] | LoadReturnProps | null> {
+  async execute({ month, userId }: LoadProps): Promise<Payment[] | LoadReturnProps | null> {
     if (month) {
-      return this.findAll(month)
-    } else if (userId) {
+      return this.findAll(month, userId)
+    } else {
       return this.findLastsPayments(userId)
     }
-    return null
   }
 
-  private async findAll(month: string): Promise<Payment[] | null> {
+  private async findAll(month: string,userId: string): Promise<Payment[] | null> {
     console.log(month)
     return await this.db.payment.findMany({
       where: {
-        currentMonth: new Date(month)
+        currentMonth: new Date(month),
+        userId
       },
       orderBy: [
         { paid: 'asc' },
