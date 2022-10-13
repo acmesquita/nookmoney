@@ -25,7 +25,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   }
 
   const totalValueBank = await new LoadTotalBanks(db).execute({ userId })
-  const percent = (Number(totalValueBank) / Number(goal.amount)) * 100
+  const percent = Math.floor((Number(totalValueBank) / Number(goal.amount)) * 100)
 
   return {
     ...goal,
