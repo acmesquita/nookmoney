@@ -43,7 +43,7 @@ export function Payments({ payments, infos }: Props) {
 			<div className="summary">
 				<div className="card">
 					<div>
-						<h3>Média</h3>
+						<h3>Cost of Living</h3>
 						<small>{infos.avg.period}</small>
 					</div>
 					<p>{formatMoney(infos.avg.amount)}</p>
