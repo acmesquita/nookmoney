@@ -7,7 +7,7 @@
     "build": "remix build",
     "db:push": "npx prisma db push",
     "dev": "remix dev",
-    "postinstall": "npx prisma db push"
+    "test": "jest -i --watch-all"
   },
   "dependencies": {
     "@prisma/client": "^4.4.0",
@@ -30,11 +30,15 @@
     "@remix-run/eslint-config": "^1.7.2",
     "@remix-run/serve": "^1.7.2",
     "@types/bcryptjs": "^2.4.2",
+    "@types/jest": "^29.2.0",
     "@types/react": "^18.0.21",
     "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "^18.0.6",
     "eslint": "^8.24.0",
+    "jest": "^29.2.1",
+    "jest-mock-extended": "^3.0.1",
     "prisma": "^4.4.0",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
   },
   "engines": {
