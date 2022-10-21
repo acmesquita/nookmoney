@@ -2,7 +2,6 @@
 import prisma from "~tests/config/client"
 import { InvalidParams } from "~/errors/invalid-params.error"
 import { CreateUser } from "~/services/user/create"
-import { getError, NoErrorThrownError } from "~tests/config/utils"
 import { prismaMock } from "~tests/config/singleton"
 
 describe('Create User', () => {
@@ -14,12 +13,9 @@ describe('Create User', () => {
       password: ''
     }
 
-    const error = await getError(async () => {
+    expect(async () => {
       await createUserService.execute(params)
-    })
-
-    expect(error).not.toBeInstanceOf(NoErrorThrownError)
-    expect(error).toBeInstanceOf(InvalidParams)
+    }).rejects.toThrow(InvalidParams)
   })
 
   it('when call with correctly params, returns a new User', async () => {
