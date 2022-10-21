@@ -8,8 +8,8 @@
     "db:push": "npx prisma db push",
     "db:migrate:deploy": "npx prisma migrate deploy",
     "dev": "remix dev",
-    "test": "jest -i --watch-all --colors",
-    "test:cov": "jest --coverage --colors"
+    "test": "jest -i --watch-all",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "@prisma/client": "^4.4.0",
