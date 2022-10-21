@@ -1,5 +1,5 @@
 import { db } from '~/config/database/db.server'
-import { LoadTotalBanks } from '../banks/loadTotal'
+import { LoadTotalBanks } from '../banks/load_total'
 import { LoadGoal } from '../objective/load'
 import { LoadPayments } from '../payments/load'
 
