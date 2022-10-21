@@ -7,7 +7,8 @@
     "build": "remix build",
     "db:push": "npx prisma db push",
     "dev": "remix dev",
-    "test": "jest -i --watch-all"
+    "test": "jest -i --watch-all --colors",
+    "test:cov": "jest --coverage --colors"
   },
   "dependencies": {
     "@prisma/client": "^4.4.0",
