@@ -1,6 +1,6 @@
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { makeDomainFunction } from "remix-domains";
+import { makeDomainFunction } from "domain-functions";
 import { formAction } from "remix-forms";
 import { z } from "zod";
 import { db } from "~/config/database/db.server";
@@ -39,7 +39,7 @@ export const action: ActionFunction = async ({ request }) => {
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request);
 
-  return userId  
+  return userId
 }
 
 export function links() {
@@ -52,8 +52,8 @@ export function links() {
 }
 
 
-export default function NewPaymentPage(){
+export default function NewPaymentPage() {
   const userId = useLoaderData()
 
-  return (<NewPayment schema={schema} userId={userId}/>)
+  return (<NewPayment schema={schema} userId={userId} />)
 }

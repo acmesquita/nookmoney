@@ -1,6 +1,6 @@
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { makeDomainFunction } from "remix-domains";
+import { makeDomainFunction } from "domain-functions";
 import { formAction } from "remix-forms";
 import { z } from "zod";
 import { db } from "~/config/database/db.server";

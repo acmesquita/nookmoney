@@ -1,6 +1,6 @@
-import type { ActionFunction} from "@remix-run/node";
+import type { ActionFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { makeDomainFunction } from 'remix-domains'
+import { makeDomainFunction } from 'domain-functions'
 import { performMutation } from 'remix-forms';
 import { z } from 'zod';
 
@@ -30,7 +30,7 @@ const mutation = makeDomainFunction(schema)(async (values) => {
 
   }
   const user = await register({ name, username, password });
-  
+
   if (!user) {
     throw new Error('Error to register user.')
   }

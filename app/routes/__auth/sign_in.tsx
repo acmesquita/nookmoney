@@ -1,7 +1,7 @@
-import type { ActionFunction} from "@remix-run/node";
+import type { ActionFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { performMutation } from 'remix-forms'
-import { makeDomainFunction } from 'remix-domains'
+import { makeDomainFunction } from 'domain-functions'
 import { z } from 'zod';
 
 import { SignIn } from "~/pages/auth/sign_in";
