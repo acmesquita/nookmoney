@@ -10,4 +10,7 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/app/**/*.{ts,tsx}'],
+  transform: {
+    '^.+\\.(t|j)sx?$': '@swc/jest',
+  },
 }
