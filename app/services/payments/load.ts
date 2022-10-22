@@ -1,4 +1,5 @@
 import type { PrismaClient, Payment } from "@prisma/client";
+import { InvalidParams } from "~/errors/invalid-params.error";
 import { formatMonth } from "~/utils/pages/format_date";
 
 type LoadProps = {
@@ -15,15 +16,18 @@ export class LoadPayments {
   constructor(private readonly db: PrismaClient) { }
 
   async execute({ month, userId }: LoadProps): Promise<Payment[] | LoadReturnProps | null> {
+    if (!userId) {
+      throw new InvalidParams()
+    }
+
     if (month) {
       return this.findAll(month, userId)
-    } else {
-      return this.findLastsPayments(userId)
     }
+
+    return this.findLastsPayments(userId)
   }
 
   private async findAll(month: string,userId: string): Promise<Payment[] | null> {
-    console.log(month)
     return await this.db.payment.findMany({
       where: {
         currentMonth: new Date(month),
