@@ -10,7 +10,7 @@ type BalanceData = {
 export class CreateBalance {
   constructor(private readonly db: PrismaClient) { }
 
-  async execute({ banks }: BalanceData): Promise<any[]> {
+  async execute({ banks }: BalanceData): Promise<boolean> {
     const bankDb = this.db.bank
     const balanceDb = this.db.balance
     const transactions: any[] = []
@@ -29,6 +29,6 @@ export class CreateBalance {
     })
 
 
-    return await this.db.$transaction(transactions)
+    return (await this.db.$transaction(transactions))?.length > 0
   }
 }
