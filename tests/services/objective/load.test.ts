@@ -28,4 +28,3 @@ describe('Load Goal', () => {
   })
 })
 
-export { }

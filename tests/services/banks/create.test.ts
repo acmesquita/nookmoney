@@ -43,4 +43,3 @@ describe('Create Bank', () => {
   })
 })
 
-export { }

@@ -65,4 +65,3 @@ describe('Load User', () => {
   })
 })
 
-export {}

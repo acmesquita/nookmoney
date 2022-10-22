@@ -68,4 +68,3 @@ describe('User Valid To Login', () => {
     expect(result?.id).toBe('1')
   })
 })
-export {}

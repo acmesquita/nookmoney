@@ -55,4 +55,3 @@ describe('LoadTotalBanks', () => {
     expect(result).toEqual(new Decimal(300))
   })
 })
-export { }
