@@ -7,36 +7,36 @@ import { BiTargetLock } from 'react-icons/bi';
 export const Sidebar = () => {
 
   const { pathname } = useLocation();
-  
+
   return (
-    <aside className="menu-bar">
+    <aside className="menu-bar" data-testid="sidebar">
       <nav className="menu-wrapper">
         <Link
-          className={`menu-item ${pathname == '/' ? 'active': ''}`}
+          className={`menu-item ${pathname == '/' ? 'active' : ''}`}
           to="/"
         >
           <BiBarChart size={20} /> Dashboard
         </Link>
         <Link
-          className={`menu-item ${pathname.includes('/banks') ? 'active': ''}`}
+          className={`menu-item ${pathname.includes('/banks') ? 'active' : ''}`}
           to="/banks"
         >
           <BsBank size={20} /> Banks
         </Link>
         <Link
-          className={`menu-item ${pathname.includes('/payments') ? 'active': ''}`}
+          className={`menu-item ${pathname.includes('/payments') ? 'active' : ''}`}
           to="/payments"
         >
           <BsWallet2 size={20} /> Payments
         </Link>
         <Link
-          className={`menu-item ${pathname.includes('/objective') ? 'active': ''}`}
+          className={`menu-item ${pathname.includes('/objective') ? 'active' : ''}`}
           to="/objective"
         >
           <BiTargetLock size={20} /> Objective
         </Link>
         <Link
-          className={`menu-item ${pathname.includes('/reports') ? 'active': ''}`}
+          className={`menu-item ${pathname.includes('/reports') ? 'active' : ''}`}
           to="/reports"
         >
           <TbReportMoney size={20} /> Reports
