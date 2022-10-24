@@ -6,9 +6,9 @@ type Props = React.HTMLProps<HTMLInputElement> & React.HTMLAttributes<HTMLInputE
 }
 
 export const Input = ({ name, id, label, errors, ...props }: Props) => (
-  <div className="field">
+  <div className="field" data-testid="input">
     <label htmlFor={name}>{label}</label>
-    <input name={name} id={id} {...props} className={errors?.length ? 'error' : ''}/>
-    {errors && errors.map(error => (<span key={error} className="error">{error}</span>))}
+    <input name={name} id={id} {...props} className={errors?.length ? 'error' : ''} />
+    {errors && errors.map(error => (<span key={error} className="error" data-testid="input-error">{error}</span>))}
   </div>
 )
