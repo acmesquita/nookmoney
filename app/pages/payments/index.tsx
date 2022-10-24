@@ -3,8 +3,8 @@ import { useNavigate } from "@remix-run/react";
 import { MainWithHeader } from "~/components/page_header";
 import { formateDate, formatMonth } from "~/utils/pages/format_date";
 import { formatMoney } from "~/utils/pages/format_money";
-import type { Kind } from "~/utils/pages/payments/parseCategory";
-import { parseCategory } from "~/utils/pages/payments/parseCategory";
+import type { Kind } from "~/utils/pages/payments/parse_category";
+import { parseCategory } from "~/utils/pages/payments/parse_category";
 
 type Props = {
 	payments: Payment[] | null
@@ -79,7 +79,7 @@ export function Payments({ payments, infos }: Props) {
 							<td className="actions">
 								<form action={`${payment.id}/edit`} method="post">
 									<button type="submit" className="btn btn-secundary">
-									Edit
+										Edit
 									</button>
 								</form>
 								{payment.paid ? (
@@ -100,4 +100,4 @@ export function Payments({ payments, infos }: Props) {
 			</table>
 		</MainWithHeader >
 	)
-} 
+}
