@@ -1,6 +1,6 @@
 import { parseCategory } from "~/utils/pages/banks/parse_category"
 
-describe('Parse Category', () => {
+describe('Parse Category for Banks', () => {
   it('when call with invalid category', () => {
     //@ts-ignore
     expect(parseCategory('invalid')).toBe('')
