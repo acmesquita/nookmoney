@@ -13,4 +13,7 @@ module.exports = {
   transform: {
     '^.+\\.(t|j)sx?$': '@swc/jest',
   },
+  coveragePathIgnorePatterns: [
+    '<rootDir>/app/config'
+  ]
 }
