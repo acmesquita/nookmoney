@@ -1,12 +1,12 @@
 import { formatMoney } from "~/utils/pages/format_money";
 
 type Props = {
-  value: number
+  value?: number
   endValue: number
 }
 export const GoalRange = ({ value = 0, endValue }: Props) => {
   return (
-    <div className="slidecontainer">
+    <div className="slidecontainer" data-testid="goal-range">
       <p>{formatMoney(0)}</p>
       <label htmlFor="myRange">{value}%</label>
       <input
@@ -14,7 +14,7 @@ export const GoalRange = ({ value = 0, endValue }: Props) => {
         type="range"
         min="0"
         max="100"
-        value={value}
+        defaultValue={value}
         className="slider"
         id="myRange"
       />

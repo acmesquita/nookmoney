@@ -48,7 +48,7 @@ input[type=range].slider::-webkit-slider-thumb {
   width: 30px;
   height: 30px;
   /* background: rgba(167, 208, 116, 0.93); */
-  background: url('/assets/mini-logo.png');
+  background: url('/assets/logoMini.png');
   border: 0;
   border-radius: 15px;
   cursor: pointer;
