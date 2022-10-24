@@ -6,7 +6,7 @@ type Props = {
 }
 
 export const Header = ({ name }: Props) => (
-  <header className='header'>
+  <header className='header' data-testid='header'>
     <Link to='/' className='logo'>
       <img src='/assets/logo.png' alt="nookmoney" />
     </Link>
