@@ -2,8 +2,8 @@
 import type { Bank } from "@prisma/client";
 import { Link } from "@remix-run/react";
 import { MainWithHeader } from "~/components/page_header";
-import type { Kind } from "~/utils/pages/banks/parseCategory";
-import { parseCategory } from "~/utils/pages/banks/parseCategory";
+import type { Kind } from "~/utils/pages/banks/parse_category";
+import { parseCategory } from "~/utils/pages/banks/parse_category";
 import { formatMoney } from "~/utils/pages/format_money";
 
 type BankShow = Bank & {
@@ -50,4 +50,4 @@ export function Banks({ data }: Props) {
 			</table>
 		</MainWithHeader>
 	)
-} 
+}
