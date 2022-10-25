@@ -3,7 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { db } from "~/config/database/db.server";
 import { getUserId } from "~/config/session/session.server";
 import { Objective } from "~/pages/objective";
-import { LoadTotalBanks } from "~/services/banks/loadTotal";
+import { LoadTotalBanks } from "~/services/banks/load_total";
 import { LoadGoal } from "~/services/objective/load";
 import objeciveStyles from '~/styles/pages/objective.css';
 

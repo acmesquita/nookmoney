@@ -6,15 +6,19 @@ import {
   Meta,
   Scripts,
   ScrollRestoration,
-  useLoaderData
+  useLoaderData,
+  useMatches
 } from "@remix-run/react";
 import globalStyles from './styles/global.css';
 import inputStyles from '~/components/input/styles.css';
 import buttonStyles from '~/components/button/styles.css';
 import goalsStyles from '~/components/goal_range/styles.css';
-import { Layout, layoutLinksStyles } from "~/components/layout";
-import { getUser } from "./config/session/session.server";
+import headerStyles from '~/components/header/styles.css';
+import sidebarStyles from '~/components/sidebar/styles.css';
+import layoutStyles from '~/components/layout/styles.css';
 import datepickerStyles from 'react-datepicker/dist/react-datepicker.css';
+import { Layout } from "~/components/layout";
+import { getUser } from "./config/session/session.server";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -44,7 +48,18 @@ export function links() {
       rel: "stylesheet",
       href: datepickerStyles,
     },
-    ...layoutLinksStyles,
+    {
+      rel: "stylesheet",
+      href: headerStyles,
+    },
+    {
+      rel: "stylesheet",
+      href: sidebarStyles,
+    },
+    {
+      rel: "stylesheet",
+      href: layoutStyles,
+    },
   ];
 }
 
@@ -61,6 +76,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function App() {
   const data = useLoaderData()
+  const matches = useMatches();
+
+	const isAuthPath = matches[1].id.includes('auth')
 
   return (
     <html lang="en">
@@ -69,7 +87,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Layout name={data.name}/>
+        <Layout name={data.name} isAuthPath={isAuthPath}/>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
