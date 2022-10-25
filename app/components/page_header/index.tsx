@@ -29,9 +29,11 @@ const Actions = ({ actions }: ActionsProps) => {
         if (action.to) {
           return (<Link key={index} to={action.to} className={action.className}>{action.title}</Link>)
         }
-        return (
-          <DateMonth key={index} date={`${action.title}-01T03:00:00`} handleSubmit={action.handle ? action.handle : () => {}} />
-        )
+        if (action.handle){
+          return (
+            <DateMonth key={index} date={`${action.title}-01T03:00:00`} handleSubmit={action.handle} />
+          )
+        }
       })}
     </div>
   )
@@ -39,7 +41,7 @@ const Actions = ({ actions }: ActionsProps) => {
 
 export function MainWithHeader({ title, children, actions }: MainWithHeaderProps) {
   return (
-    <main className="main-container">
+    <main className="main-container" data-testid="main-container">
       <header className="header-page">
         <h1 className="title">{title}</h1>
         <Actions actions={actions} />
