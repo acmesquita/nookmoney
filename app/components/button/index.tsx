@@ -23,7 +23,8 @@ export const DateMonth = ({ date, handleSubmit  }: DateMonthProps) => {
   }
 
   const Input = forwardRef(({ value, onClick }: { value?: string, onClick?: () => void}, ref) => (
-    <Button variant="secundary" onClick={onClick} ref={ref}>
+    //@ts-ignore
+    <Button variant="secundary" onClick={onClick} ref={ref} >
       {value}
     </Button>
   ));
@@ -32,7 +33,7 @@ export const DateMonth = ({ date, handleSubmit  }: DateMonthProps) => {
     <DatePicker
       selected={startDate}
       onChange={handle}
-      customInput={<Input />}
+      customInput={<Input data-testid="date-month"/>}
       dateFormat="MM/yyyy"
       showMonthYearPicker
       showFullMonthYearPicker
@@ -43,7 +44,7 @@ export const DateMonth = ({ date, handleSubmit  }: DateMonthProps) => {
 export const Button = ({ children, variant = 'primary', type = 'button', href, ...props }: Props) => {
   if (href) {
     return (
-      <Link to={href} className={`btn btn-${variant}`}>
+      <Link to={href} className={`btn btn-${variant}`} data-testid="button-link">
         {children}
       </Link>
     )
@@ -54,6 +55,7 @@ export const Button = ({ children, variant = 'primary', type = 'button', href, .
       {...props}
       type={type}
       className={`btn btn-${variant}`}
+      data-testid="button"
     >
       {children}
     </button>
