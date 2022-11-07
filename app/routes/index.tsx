@@ -5,6 +5,7 @@ import { Dashboard } from '~/pages/dashboard';
 import { getInfoToDashboard } from '~/services/dashboard';
 import dashboardStyles from '~/styles/pages/dashboard.css';
 import { getUser } from '~/config/session/session.server';
+import { db } from '~/config/database/db.server';
 
 export function links() {
   return [
@@ -22,7 +23,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     return redirect('/sign_in')
   }  
 
-  return await getInfoToDashboard(user.id)
+  return await getInfoToDashboard(user.id, db)
 }
 
 export default function DashboardPage() {

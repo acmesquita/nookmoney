@@ -1,10 +1,10 @@
-import { db } from '~/config/database/db.server'
+import type { PrismaClient } from '@prisma/client'
 import { InvalidParams } from '~/errors/invalid-params.error'
 import { LoadTotalBanks } from '../banks/load_total'
 import { LoadGoal } from '../objective/load'
 import { LoadPayments } from '../payments/load'
 
-export const getInfoToDashboard = async (userId: string) => {
+export const getInfoToDashboard = async (userId: string, db: PrismaClient) => {
   if (!userId) {
     throw new InvalidParams()
   }
