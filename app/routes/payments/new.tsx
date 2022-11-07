@@ -1,6 +1,6 @@
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { makeDomainFunction } from "remix-domains";
+import { makeDomainFunction } from "domain-functions";
 import { formAction } from "remix-forms";
 import { z } from "zod";
 import { db } from "~/config/database/db.server";
@@ -19,9 +19,11 @@ const schema = z.object({
 })
 
 const mutation = makeDomainFunction(schema)(async (data) => {
+  const dateSplit = data.currentMonth.split('-')
+  const currentMonth = `${dateSplit[1]}-${dateSplit[0]}-01`
   const payment = new CreatePayment(db).execute({
     amount: Number(data.amount),
-    currentMonth: `01/${data.currentMonth}`,
+    currentMonth,
     category: data.category,
     description: data.description,
     dueDate: data.dueDate,
@@ -37,7 +39,7 @@ export const action: ActionFunction = async ({ request }) => {
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request);
 
-  return userId  
+  return userId
 }
 
 export function links() {
@@ -50,8 +52,8 @@ export function links() {
 }
 
 
-export default function NewPaymentPage(){
+export default function NewPaymentPage() {
   const userId = useLoaderData()
 
-  return (<NewPayment schema={schema} userId={userId}/>)
+  return (<NewPayment schema={schema} userId={userId} />)
 }

@@ -2,6 +2,7 @@ import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { db } from "~/config/database/db.server";
+import { getUserId } from "~/config/session/session.server";
 import { UpdateAmount } from "~/pages/banks/update_amount";
 import { CreateBalance } from "~/services/balances/create";
 import { FindBanks } from "~/services/banks";
@@ -12,8 +13,9 @@ type Bank = {
   amount: number
 }
 
-export const loader: LoaderFunction = async () => {
-  const banks = await new FindBanks(db).execute({})
+export const loader: LoaderFunction = async ({ request }) => {
+  const userId = await getUserId(request) || ''
+  const banks = await new FindBanks(db).execute({ userId })
 
   return banks
 }

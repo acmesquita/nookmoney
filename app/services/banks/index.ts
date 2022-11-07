@@ -2,17 +2,18 @@ import type { Bank, PrismaClient } from "@prisma/client";
 
 type BankData = {
   id?: string;
+  userId: string
 }
 
 export class FindBanks {
   constructor(private readonly db: PrismaClient) { }
 
-  async execute({ id }: BankData): Promise<Bank | Bank[] | null> {
+  async execute({ id, userId }: BankData): Promise<Bank | Bank[] | null> {
     if (id) {
       return await this.findBankById(id)
     }
 
-    return await this.findAllBanks()
+    return await this.findAllBanks(userId)
   }
 
   private async findBankById(id: string) {
@@ -31,8 +32,11 @@ export class FindBanks {
     }) 
   }
 
-  private async findAllBanks() {
+  private async findAllBanks(userId: string) {
     return await this.db.bank.findMany({
+      where: {
+        userId
+      },
       orderBy: {
         name: 'asc'
       },

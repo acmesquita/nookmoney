@@ -11,6 +11,7 @@ import {
 import globalStyles from './styles/global.css';
 import inputStyles from '~/components/input/styles.css';
 import buttonStyles from '~/components/button/styles.css';
+import goalsStyles from '~/components/goal_range/styles.css';
 import { Layout, layoutLinksStyles } from "~/components/layout";
 import { getUser } from "./config/session/session.server";
 import datepickerStyles from 'react-datepicker/dist/react-datepicker.css';
@@ -34,6 +35,10 @@ export function links() {
     {
       rel: "stylesheet",
       href: inputStyles,
+    },
+    {
+      rel: "stylesheet",
+      href: goalsStyles,
     },
     {
       rel: "stylesheet",

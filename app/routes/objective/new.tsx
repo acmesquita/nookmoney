@@ -5,24 +5,24 @@ import { formAction } from "remix-forms";
 import { z } from "zod";
 import { db } from "~/config/database/db.server";
 import { getUserId } from "~/config/session/session.server";
-import { NewBank } from "~/pages/banks/new";
-import { CreateBank } from "~/services/banks/create";
-import banksNewStyles from '~/styles/pages/banks.new.css';
+import { NewObjective } from "~/pages/objective/new";
+import { CreateGoal } from "~/services/objective/create";
+import objeciveNewStyles from '~/styles/pages/objective.new.css';
 
 const schema = z.object({
-  name: z.string().min(3),
-  category: z.string(),
+  describe: z.string().min(3),
+  amount: z.number().min(0),
   userId: z.string()
 })
 
 const mutation = makeDomainFunction(schema)(async (data) => {
-  const bank = await new CreateBank(db).execute(data)
+  const goal = await new CreateGoal(db).execute(data)
 
-  return bank
+  return goal
 })
 
 export const action: ActionFunction = async ({ request }) => {
-  return await formAction({ request, schema, mutation, successPath: '/banks' })
+  return await formAction({ request, schema, mutation, successPath: '/objective' })
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -35,14 +35,12 @@ export function links() {
   return [
     {
       rel: "stylesheet",
-      href: banksNewStyles,
+      href: objeciveNewStyles,
     },
   ]
 }
 
-export default function NewBankPage() {
-
+export default function NewObjectPage() {
   const userId = useLoaderData()
-
-  return <NewBank schema={schema} userId={userId} />
+  return <NewObjective schema={schema} userId={userId} />
 }

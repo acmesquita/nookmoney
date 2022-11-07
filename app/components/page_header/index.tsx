@@ -1,4 +1,3 @@
-import * as crypto from 'crypto'
 import { Link } from "@remix-run/react"
 import { DateMonth } from '../button'
 
@@ -31,7 +30,7 @@ const Actions = ({ actions }: ActionsProps) => {
           return (<Link key={index} to={action.to} className={action.className}>{action.title}</Link>)
         }
         return (
-          <DateMonth key={index} date={action.title} handleSubmit={action.handle ? action.handle : () => {}} />
+          <DateMonth key={index} date={`${action.title}-01T03:00:00`} handleSubmit={action.handle ? action.handle : () => {}} />
         )
       })}
     </div>

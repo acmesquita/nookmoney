@@ -1,8 +1,0 @@
-.menu-bar {
-  width: 256px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}

@@ -17,7 +17,7 @@ System to manager your money with simples interations
 
 ### Getting Started
 
-Instalação das dependências desse projeto é recomendado ser com o `npm`
+Installation of this project's dependencies is recommended to be with `npm`
 
 ```bash
 npm install
@@ -27,6 +27,17 @@ npm install
 
 **Pre-install**
 
+Configure the `.env` file by copying and applying environment variables:
+
+```bash
+touch .env
+```
+```env
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432"
+SESSION_SECRET="YOUR_SECRET_FRASE"
+NODE_ENV="production"
+```
+
 This project need `docker` installed successful.
 
 > Initialize database
@@ -34,15 +45,12 @@ This project need `docker` installed successful.
 ```bash
 docker compose up
 ```
-```
-npx prisma db push
-```
 
-> Start application
+> Start application with schema database
 
 ```bash
 npm run dev
 
 ```
 
-Access http://localhost:3000 :tada
+Access http://localhost:3000 🎉
