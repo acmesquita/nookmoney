@@ -27,11 +27,11 @@
     "react-icons": "^4.4.0",
     "remix-forms": "^0.18.2",
     "zod": "^3.19.1",
+    "@remix-run/serve": "^1.7.2",
     "@remix-run/dev": "^1.7.2"
   },
   "devDependencies": {
     "@remix-run/eslint-config": "^1.7.2",
-    "@remix-run/serve": "^1.7.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^29.2.0",
     "@types/react": "^18.0.21",
