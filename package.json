@@ -8,6 +8,7 @@
     "db:push": "npx prisma db push",
     "db:migrate:deploy": "npx prisma migrate deploy",
     "dev": "remix dev",
+    "start": "remix dev",
     "test": "jest -i --watch-all --colors",
     "test:cov": "jest --coverage --colors"
   },
@@ -25,10 +26,10 @@
     "react-hook-form": "^7.36.1",
     "react-icons": "^4.4.0",
     "remix-forms": "^0.18.2",
-    "zod": "^3.19.1"
+    "zod": "^3.19.1",
+    "@remix-run/dev": "^1.7.2"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.7.2",
     "@remix-run/eslint-config": "^1.7.2",
     "@remix-run/serve": "^1.7.2",
     "@types/bcryptjs": "^2.4.2",
