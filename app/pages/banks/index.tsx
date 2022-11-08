@@ -12,6 +12,7 @@ type BankShow = Bank & {
 
 export type DataProps = {
 	total_amount: number,
+	total_diff_amount: number,
 	banks: BankShow[]
 }
 
@@ -28,7 +29,11 @@ export function Banks({ data }: Props) {
 			<div className="summary">
 				<div className="card">
 					<h3>Total</h3>
-					<p>{formatMoney(data.total_amount)}</p>
+					<p>{formatMoney(Number(data.total_amount))}</p>
+				</div>
+				<div className="card">
+					<h3>Total Diff</h3>
+					<p>{formatMoney(Number(data.total_diff_amount))}</p>
 				</div>
 			</div>
 			<hr />
