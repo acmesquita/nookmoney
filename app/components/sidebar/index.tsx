@@ -3,13 +3,20 @@ import { BiBarChart } from 'react-icons/bi';
 import { BsBank, BsWallet2 } from 'react-icons/bs';
 import { TbReportMoney } from 'react-icons/tb';
 import { BiTargetLock } from 'react-icons/bi';
+import clsx from 'clsx'
 
-export const Sidebar = () => {
+export const Sidebar = ({ open }: { open: boolean }) => {
 
   const { pathname } = useLocation();
 
   return (
-    <aside className="menu-bar" data-testid="sidebar">
+    <aside
+      className={clsx({
+        "menu-bar": true,
+        "show": open
+      })}
+      data-testid="sidebar"
+    >
       <nav className="menu-wrapper">
         <Link
           className={`menu-item ${pathname == '/' ? 'active' : ''}`}

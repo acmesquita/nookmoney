@@ -1,4 +1,5 @@
 import { Outlet } from "@remix-run/react";
+import { useState } from "react";
 import { Header } from "~/components/header";
 import { Sidebar } from "~/components/sidebar";
 
@@ -8,15 +9,17 @@ type Props = {
 }
 
 export const Layout = ({ name, isAuthPath }: Props) => {
+	const [open, setOpen] = useState(false)
+	
 	if(isAuthPath) {
 		return <Outlet />
 	}
 	
 	return (
 		<>
-			<Header name={name} />
+			<Header name={name} openSidebar={() => setOpen(old => !old)} />
 			<div className="container">
-				<Sidebar />
+				<Sidebar open={open} />
 				<Outlet />
 			</div>
 		</>

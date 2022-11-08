@@ -61,6 +61,29 @@
 
 @media (max-width: 600px) {
   .menu-bar {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 48px;
+    height: calc(100vh - 48px);
   }
+  .show {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    left: -256px;
+    width: 256px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 0s;
+    animation: slide 0.5s forwards;
+    animation-delay: 0s;
+  }
+
+  @-webkit-keyframes slide {
+    100% { left: 0; }
+  }
+
+  @keyframes slide {
+    100% { left: 0; }
+  }
+
 }

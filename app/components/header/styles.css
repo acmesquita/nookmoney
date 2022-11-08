@@ -64,7 +64,14 @@
   transition: all 0.2s ease;
 }
 
+.show-mobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
+  .show-mobile {
+    display: inline;
+  }
   .header {
     height: 48px;
   }

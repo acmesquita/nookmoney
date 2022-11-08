@@ -76,7 +76,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function App() {
   const data = useLoaderData()
-  const matches = useMatches();
+  const matches = useMatches()
 
 	const isAuthPath = matches[1].id.includes('auth')
 
