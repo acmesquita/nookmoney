@@ -22,7 +22,7 @@ type Props = {
 
 export function Banks({ data }: Props) {
 	return (
-		<MainWithHeader title="Bank" actions={[
+		<MainWithHeader title="Banks" actions={[
 			{ to: 'new', className: "btn btn-secundary", title: 'New Bank' },
 			{ to: 'update_amount', className: "btn btn-primary", title: 'Update Amounts' }
 		]}>
