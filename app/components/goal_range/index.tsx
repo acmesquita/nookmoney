@@ -15,7 +15,7 @@ export const GoalRange = ({ value = 0, endValue }: Props) => {
         min="0"
         max="100"
         defaultValue={value}
-        className="slider"
+        className="ranger slider-progress"
         id="myRange"
       />
       <p>{formatMoney(endValue)}</p>
