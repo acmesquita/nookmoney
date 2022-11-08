@@ -12,6 +12,7 @@ type Props = {
 }
 
 export function Bank({ bank }: Props) {
+  const evolution = Number(bank.balances[0].amount) - Number(bank.balances[1].amount)
   return (
     <MainWithHeader
       title={bank.name}
@@ -25,6 +26,10 @@ export function Bank({ bank }: Props) {
 				<div className="card">
 					<h3>Total Amount</h3>
 					<p>{formatMoney(Number(bank.amount))}</p>
+				</div>
+        <div className="card">
+					<h3>Evolution</h3>
+					<p>{formatMoney(Number(evolution))}</p>
 				</div>
 			</div>
 			<hr />
