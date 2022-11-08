@@ -32,7 +32,7 @@ export function Banks({ data }: Props) {
 					<p>{formatMoney(Number(data.total_amount))}</p>
 				</div>
 				<div className="card">
-					<h3>Total Diff</h3>
+					<h3>Evolution</h3>
 					<p>{formatMoney(Number(data.total_diff_amount))}</p>
 				</div>
 			</div>
