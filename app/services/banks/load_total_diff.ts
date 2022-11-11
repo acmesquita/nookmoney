@@ -29,8 +29,8 @@ export class LoadTotalDiffBanksAmount {
       take: 2
     })
 
-    const diff = Number(aggregate[0]._sum.amount) - Number(aggregate[1]._sum.amount)
+    const diff = (Number(aggregate[0]?._sum.amount) - Number(aggregate[1]?._sum.amount)) || 0
 
-    return new Decimal(diff) || new Decimal(0)
+    return new Decimal(diff)
   }
 }
