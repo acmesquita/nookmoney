@@ -73,10 +73,12 @@ export function EvolutionBalancesReports({ balances }: Props) {
       <hr />
       <table>
         <thead>
-          <th>Month</th>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Evolutuion</th>
+          <tr>
+            <th>Month</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Evolutuion</th>
+          </tr>
         </thead>
         <tbody>
           {balancesByMonth?.map((balance, index) => (
