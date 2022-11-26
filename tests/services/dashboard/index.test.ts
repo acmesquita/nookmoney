@@ -37,6 +37,17 @@ describe('getInfoToDashboard', () => {
         }
       })
 
+      prismaMock.balance.aggregate.mockResolvedValue({
+        _max: {
+          createdAt: new Date('01-11-2022')
+        },
+        _sum: {},
+        _avg: {},
+        _count: {},
+        _min: {}
+      })
+
+
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
         currentMonth: new Date(),
@@ -78,7 +89,7 @@ describe('getInfoToDashboard', () => {
       expect(result).toEqual({
         summary: {
           walet: {
-            updateAt: "18/09/2022",
+            updateAt: "11/01/2022",
             amount: new Decimal(300)
           },
           payments: {
@@ -129,6 +140,16 @@ describe('getInfoToDashboard', () => {
         }
       })
 
+      prismaMock.balance.aggregate.mockResolvedValue({
+        _max: {
+          createdAt: new Date('01-11-2022')
+        },
+        _sum: {},
+        _avg: {},
+        _count: {},
+        _min: {}
+      })
+
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
         currentMonth: new Date(),
@@ -170,7 +191,7 @@ describe('getInfoToDashboard', () => {
       expect(result).toEqual({
         summary: {
           walet: {
-            updateAt: "18/09/2022",
+            updateAt: "11/01/2022",
             amount: new Decimal(0)
           },
           payments: {

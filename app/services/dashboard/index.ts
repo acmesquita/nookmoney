@@ -1,5 +1,7 @@
 import type { PrismaClient } from '@prisma/client'
+import { Decimal } from '@prisma/client/runtime'
 import { InvalidParams } from '~/errors/invalid-params.error'
+import { formateDate } from '~/utils/pages/format_date'
 import { LoadTotalBanks } from '../banks/load_total'
 import { LoadGoal } from '../objective/load'
 import { LoadPayments } from '../payments/load'
@@ -14,11 +16,12 @@ export const getInfoToDashboard = async (userId: string, db: PrismaClient) => {
   const payments = await new LoadPayments(db).execute({ userId }) as { currentMonth: string, amount: number }
 
   const percent = Math.floor((Number(totalValueBank) / Number(goal?.amount)) * 100) || 0
+  const updateAtWalet = await getLastUpdateWalet(db)
 
   return {
     summary: {
       walet: {
-        updateAt: "18/09/2022",
+        updateAt: updateAtWalet,
         amount: totalValueBank
       },
       payments: {
@@ -45,4 +48,14 @@ export const getInfoToDashboard = async (userId: string, db: PrismaClient) => {
       }
     ]
   }
+}
+
+async function getLastUpdateWalet(db: PrismaClient) {
+  const result = await db.balance.aggregate({
+    _max: {
+      createdAt: true
+    }
+  })
+
+  return result._max.createdAt ? formateDate(result._max.createdAt) : ''
 }
