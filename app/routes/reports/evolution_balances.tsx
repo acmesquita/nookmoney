@@ -4,6 +4,17 @@ import { db } from "~/config/database/db.server";
 import { getUserId } from "~/config/session/session.server";
 import { EvolutionBalancesReports } from "~/pages/reports/evolution_balances";
 import { EvolutionBalances } from "~/services/reports/evolution_balances";
+import reportsStyles from '../../styles/pages/reports.css';
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: reportsStyles,
+    },
+  ]
+}
+
 
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request) || ''

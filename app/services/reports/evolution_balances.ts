@@ -15,10 +15,17 @@ export class EvolutionBalances {
       throw new InvalidParams()
     }
     
+    const date = new Date();
+    const last3ToMonth =  new Date(date.getFullYear(), date.getMonth(), 1);
+    last3ToMonth.setDate(last3ToMonth.getDate() - 90)
+    
     const balances = await this.db.balance.groupBy({
       where: {
         Bank: {
           userId
+        },
+        createdAt: {
+          gte: last3ToMonth
         }
       },
       _sum: {
