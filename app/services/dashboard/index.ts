@@ -1,5 +1,4 @@
 import type { PrismaClient } from '@prisma/client'
-import { Decimal } from '@prisma/client/runtime'
 import { InvalidParams } from '~/errors/invalid-params.error'
 import { formateDate } from '~/utils/pages/format_date'
 import { LoadTotalBanks } from '../banks/load_total'
@@ -16,7 +15,8 @@ export const getInfoToDashboard = async (userId: string, db: PrismaClient) => {
   const payments = await new LoadPayments(db).execute({ userId }) as { currentMonth: string, amount: number }
 
   const percent = Math.floor((Number(totalValueBank) / Number(goal?.amount)) * 100) || 0
-  const updateAtWalet = await getLastUpdateWalet(db)
+  const updateAtWalet = await getLastUpdateWalet(userId, db)
+  const hasUnpaid = await hasPaymentUnpaid(userId, db)
 
   return {
     summary: {
@@ -35,27 +35,43 @@ export const getInfoToDashboard = async (userId: string, db: PrismaClient) => {
     },
     "pendencies": [
       {
-        "complited": true,
+        "complited": Boolean(goal),
         "describe": "Create objective"
       },
       {
-        "complited": false,
+        "complited": updateAtWalet === formateDate(new Date()),
         "describe": "Update bank balances"
       },
       {
-        "complited": false,
+        "complited": hasUnpaid,
         "describe": "Outstanding payments"
       }
     ]
   }
 }
 
-async function getLastUpdateWalet(db: PrismaClient) {
+async function getLastUpdateWalet(userId: string, db: PrismaClient) {
   const result = await db.balance.aggregate({
     _max: {
       createdAt: true
+    },
+    where: {
+      Bank: {
+        userId
+      }
     }
   })
 
   return result._max.createdAt ? formateDate(result._max.createdAt) : ''
+}
+
+async function hasPaymentUnpaid(userId: string, db: PrismaClient) {
+  const result = await db.payment.count({
+    where: {
+      paid: false,
+      userId
+    }
+  })
+
+  return result === 0
 }

@@ -26,6 +26,8 @@ type Props = {
 }
 
 export function Dashboard({ data }: Props) {
+	const pendencies = data.pendencies.sort().reverse()
+
 	return (
 		<MainWithHeader title="Dashboard">
 			<div className="summary">
@@ -46,7 +48,7 @@ export function Dashboard({ data }: Props) {
 			<h2 className="subtitle">Pendencies</h2>
 
 			<ul className="pendencies">
-				{data.pendencies.map(item => (
+				{pendencies.map(item => (
 					<li className="pendencie-item" key={item.describe}>
 						{item.complited ? <BsCheckCircleFill color='green' /> : <BsCircle />}
 						{item.describe}

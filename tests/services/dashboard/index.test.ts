@@ -47,6 +47,7 @@ describe('getInfoToDashboard', () => {
         _min: {}
       })
 
+      prismaMock.payment.count.mockResolvedValue(0)
 
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
@@ -111,15 +112,14 @@ describe('getInfoToDashboard', () => {
             "describe": "Update bank balances"
           },
           {
-            "complited": false,
+            "complited": true,
             "describe": "Outstanding payments"
           }
         ]
       })
     })
 
-
-    it('result contains summary with wallet, payment and objetive resume', async () => {
+    it('result contains summary with wallet, payment and not objetive resume', async () => {
       prismaMock.goal.findFirst.mockResolvedValue(null)
 
       prismaMock.bank.aggregate.mockResolvedValue({
@@ -149,6 +149,8 @@ describe('getInfoToDashboard', () => {
         _count: {},
         _min: {}
       })
+
+      prismaMock.payment.count.mockResolvedValue(0)
 
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
@@ -205,7 +207,7 @@ describe('getInfoToDashboard', () => {
         },
         "pendencies": [
           {
-            "complited": true,
+            "complited": false,
             "describe": "Create objective"
           },
           {
@@ -213,7 +215,85 @@ describe('getInfoToDashboard', () => {
             "describe": "Update bank balances"
           },
           {
+            "complited": true,
+            "describe": "Outstanding payments"
+          }
+        ]
+      })
+    })
+
+    it('result contains summary with wallet, not payment and not objetive resume', async () => {
+      prismaMock.goal.findFirst.mockResolvedValue(null)
+
+      prismaMock.bank.aggregate.mockResolvedValue({
+        _sum: {
+          amount: new Decimal(0)
+        },
+        _avg: {
+          amount: null
+        },
+        _count: {
+          amount: undefined
+        },
+        _max: {
+          amount: null
+        },
+        _min: {
+          amount: null
+        }
+      })
+
+      prismaMock.balance.aggregate.mockResolvedValue({
+        _max: {
+          createdAt: null
+        },
+        _sum: {},
+        _avg: {},
+        _count: {},
+        _min: {}
+      })
+
+      prismaMock.payment.count.mockResolvedValue(0)
+
+      // @ts-ignore
+      jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
+        currentMonth: new Date(),
+        _sum: {
+          amount: new Decimal(0)
+        }
+      }])
+
+      prismaMock.payment.findMany.mockResolvedValue([])
+
+
+      const result = await getInfoToDashboard('valid_id', prisma)
+
+      expect(result).toEqual({
+        summary: {
+          walet: {
+            updateAt: "",
+            amount: new Decimal(0)
+          },
+          payments: {
+            currentMonth: "11/2022",
+            amount: 0
+          },
+          objetive: {
+            amount: 0,
+            percentComplited: 0
+          }
+        },
+        "pendencies": [
+          {
             "complited": false,
+            "describe": "Create objective"
+          },
+          {
+            "complited": false,
+            "describe": "Update bank balances"
+          },
+          {
+            "complited": true,
             "describe": "Outstanding payments"
           }
         ]
