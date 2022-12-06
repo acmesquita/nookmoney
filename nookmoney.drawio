@@ -1,38 +1,89 @@
-<mxfile host="app.diagrams.net" modified="2022-12-06T17:00:16.823Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" version="20.6.0" etag="1WEMZq2R9JVGCFR4owpX" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-06T19:27:57.780Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="E_exODIeMzldmnUJZHNh" version="20.6.0" type="github">
   <diagram id="ISA0RliEs95sBQLsU-8t" name="Arch">
-    <mxGraphModel dx="945" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="783" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-1" value="&lt;pre style=&quot;line-height: 0%;&quot;&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre style=&quot;line-height: 0%;&quot;&gt;&lt;br&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="189" y="370" width="450" height="280" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-1" value="&lt;pre style=&quot;line-height: 0%;&quot;&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre style=&quot;line-height: 0%;&quot;&gt;&lt;br&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="370" width="450" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-10" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="209" y="390" width="160" height="105" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-10" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="209" y="390" width="211" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-2" value="&lt;pre&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Domain&lt;/font&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="189" y="370" width="40" height="10" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-2" value="&lt;pre&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Domain&lt;/font&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="189" y="370" width="451" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-5" value="Payment" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="224" y="410" width="60" height="30" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-5" value="Payment" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="220" y="410" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-6" value="Balance" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="294" y="410" width="60" height="30" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-6" value="Balance" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="284" y="410" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-7" value="Bank" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="224" y="455" width="60" height="30" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-7" value="Bank" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="220" y="455" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-8" value="User" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="294" y="455" width="60" height="30" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-8" value="User" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="284" y="455" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-11" value="&lt;pre&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Entities&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="209" y="390" width="40" height="10" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-11" value="&lt;pre&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Entities&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="209" y="390" width="161" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
-          <mxGeometry x="440" y="532" width="160" height="105" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="209" y="520" width="411" height="105" as="geometry" />
         </mxCell>
-        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-24" value="&lt;pre&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Use cases&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="440" y="532" width="160" height="10" as="geometry" />
+        <mxCell id="n00wNhqkPWvZWgpfJ0ZG-24" value="&lt;pre&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Use cases&lt;/span&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="209" y="520" width="160" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-3" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;Create Payment&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="219" y="538" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-4" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;Pay Payment&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="219" y="558" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-5" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;Update Payment&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="219" y="578" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-6" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;Create Balance&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="289" y="538" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-7" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;Create Bank&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="289" y="558" width="50" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-8" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;Update amount bank&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="289" y="578" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-9" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Create goal&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="299" y="598" width="50" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-10" value="Session" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="349" y="455" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-11" value="Goal" style="rounded=1;whiteSpace=wrap;html=1;fontSize=8;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="349" y="410" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-12" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc percent to goal&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="219" y="598" width="70" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-13" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc&amp;nbsp; evolution to all banks by day&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="359" y="538" width="121" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-14" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc&amp;nbsp; evolution to one bank by day&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="360" y="558" width="121" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-15" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc&amp;nbsp; cost of living&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="369" y="578" width="61" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-16" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc&amp;nbsp; cost of living&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="359" y="598" width="61" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-17" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc&amp;nbsp; total amount to banks&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="490" y="538" width="90" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-18" value="&lt;p style=&quot;line-height: 50%;&quot;&gt;&lt;span style=&quot;font-size: 7px;&quot;&gt;Calc&amp;nbsp; total amount to payments of current month&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="490" y="556" width="100" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-19" value="&lt;p style=&quot;line-height: 50%;&quot;&gt;&lt;span style=&quot;font-size: 7px;&quot;&gt;Define pendencies&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="490" y="586" width="70" height="14" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
