@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-06T19:27:57.780Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="E_exODIeMzldmnUJZHNh" version="20.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-06T20:25:21.329Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="HfoEyB66Jf4kqmZTCD9j" version="20.6.0" type="github">
   <diagram id="ISA0RliEs95sBQLsU-8t" name="Arch">
-    <mxGraphModel dx="783" dy="460" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="652" dy="383" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -84,6 +84,12 @@
         </mxCell>
         <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-19" value="&lt;p style=&quot;line-height: 50%;&quot;&gt;&lt;span style=&quot;font-size: 7px;&quot;&gt;Define pendencies&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="490" y="586" width="70" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-20" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Create user&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="434" y="578" width="50" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="tAZ_Iq-ewTHzRRfz_yyl-21" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;Create session&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;gradientColor=none;strokeWidth=1;spacing=2;spacingTop=-3;" vertex="1" parent="1">
+          <mxGeometry x="430" y="598" width="50" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
