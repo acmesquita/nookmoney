@@ -5,6 +5,7 @@ import { db } from "~/config/database/db.server";
 import { getUserId } from "~/config/session/session.server";
 import { Payments } from "~/pages/payments";
 import { LoadPayments } from "~/services/payments/load";
+import { formatMonth } from "~/utils/pages/format_date";
 import paymentsStyles from '../../styles/pages/payments.css';
 
 type InfoProps = {
@@ -35,6 +36,30 @@ export function links() {
   ]
 }
 
+function subtractMonths(date: Date, months: number): Date {
+  date.setMonth(date.getMonth() - months);
+  return date;
+}
+
+async function costOfLive(userId: string, time = 6): Promise<number> {
+  const payments = []
+
+  for (let index = 1; index < time + 1; index++) {
+    try {
+      const date = subtractMonths(new Date(), index)
+      const month = `${date.getFullYear()}-${date.getMonth() + 1}-01`
+      const result = await new LoadPayments(db).execute({ month, userId }) as Payment[]
+      payments.push(...result)
+    } catch (error) {
+      break
+    }
+  }
+
+  const sumTotal = payments.reduce((total, item) => Number(item.amount) + total, 0)
+
+  return Number(Math.floor(sumTotal / time).toFixed(2))
+}
+
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request) || ''
 
@@ -46,11 +71,11 @@ export const loader: LoaderFunction = async ({ request }) => {
   const total = payments?.map(pay => pay.amount).reduce((p1, p2) => Number(p1) + Number(p2), 0) || 0
   const paid =  payments?.filter(pay => pay.paid).map(pay => pay.amount).reduce((p1, p2) => Number(p1) + Number(p2), 0) || 0
   const owing =  payments?.filter(pay => !pay.paid).map(pay => pay.amount).reduce((p1, p2) => Number(p1) + Number(p2), 0) || 0
-  const avg = 0
+  const avg = await costOfLive(userId)
 
   const infos = {
     avg: {
-      period: '',
+      period: 'last 6 month',
       amount: avg
     },
     summary: {
