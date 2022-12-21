@@ -5,7 +5,6 @@ import { db } from "~/config/database/db.server";
 import { getUserId } from "~/config/session/session.server";
 import { Payments } from "~/pages/payments";
 import { LoadPayments } from "~/services/payments/load";
-import { formatMonth } from "~/utils/pages/format_date";
 import paymentsStyles from '../../styles/pages/payments.css';
 
 type InfoProps = {
