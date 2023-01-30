@@ -36,3 +36,23 @@
   text-align: right;
   color: #1f2f6f;
 }
+
+.flex {
+  display: flex;
+}
+
+.custom-tooltip {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  box-shadow: 0 2px 8px #1f2f6f;
+}
+
+.custom-tooltip > .label {
+  font-weight: bold;
+}

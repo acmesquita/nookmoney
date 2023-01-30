@@ -7,6 +7,7 @@
     "build": "remix build",
     "db:push": "npx prisma db push",
     "db:migrate:deploy": "npx prisma migrate deploy",
+    "db:migrate:dev": "npx prisma migrate dev",
     "dev": "remix dev",
     "start": "remix-serve build",
     "test": "jest -i --watch-all --colors",
@@ -27,6 +28,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.1",
     "react-icons": "^4.4.0",
+    "recharts": "^2.3.2",
     "remix-forms": "^0.18.2",
     "zod": "^3.19.1"
   },
@@ -43,6 +45,7 @@
     "@types/react": "^18.0.21",
     "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "^18.0.6",
+    "@types/recharts": "^1.8.24",
     "eslint": "^8.24.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.2.1",
