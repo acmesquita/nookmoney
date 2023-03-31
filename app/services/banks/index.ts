@@ -28,7 +28,7 @@ export class FindBanks {
       },
       include: {
         balances: {
-          take: 10,
+          take: 15,
           orderBy: {
             createdAt: 'desc'
           }
