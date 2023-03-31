@@ -33,7 +33,7 @@ export function Bank({ bank }: Props) {
 				</div>
 			</div>
 			<hr />
-      <h2 className="subtitle">Balances</h2><small><i>(last 10 itens)</i></small>
+      <h2 className="subtitle">Balances</h2><small><i>(last 15 itens)</i></small>
       <table>
 				<thead>
 					<th>Date</th>
