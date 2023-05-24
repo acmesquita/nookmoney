@@ -27,7 +27,7 @@ export class Timeline {
           from "Balance"
           group by to_char("Balance"."createdAt", 'MM/YYYY')
         )
-        order by month_bank desc
+        order by "Balance"."createdAt" desc
     `
 
     return result
