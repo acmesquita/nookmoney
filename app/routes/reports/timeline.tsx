@@ -18,15 +18,15 @@ export function links() {
 
 export const loader: LoaderFunction = async ({ request }) => {
   const userId = await getUserId(request) || ''
-  const result = await new Timeline(db).execute({ userId }) as Array<{name: string, month_bank: string, sum: number}>
+  const result = await new Timeline(db).execute({ userId }) as Array<{name: string, month_bank: string, amount: number}>
 
   const resume = {} as { [item: string]: Array<{ bank: string, amount: number }>}
 
   result.forEach(item => {
     if (Array.isArray(resume[item.month_bank])) {
-      resume[item.month_bank].push({ bank: item.name, amount: item.sum })
+      resume[item.month_bank].push({ bank: item.name, amount: item.amount })
     } else {
-      resume[item.month_bank] = [{ bank: item.name, amount: item.sum }]
+      resume[item.month_bank] = [{ bank: item.name, amount: item.amount }]
     }
   })
 

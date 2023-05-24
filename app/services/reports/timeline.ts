@@ -15,13 +15,12 @@ export class Timeline {
 
     const result = await this.db.$queryRaw`
       select
-        "Bank"."name",
+        max("Balance"."createdAt"),
         to_char("Balance"."createdAt", 'MM/YYYY') as month_bank,
-        sum("Balance"."amount")
-      from "Balance"
-        inner join "Bank" on "Bank".id = "Balance"."bankId"
-      group by to_char("Balance"."createdAt", 'MM/YYYY'), "Bank"."name"
-      order by to_char("Balance"."createdAt", 'MM/YYYY') desc
+        "Balance"."amount",
+        "Bank"."name"
+      from "Balance" inner join "Bank" on "Bank".id = "Balance"."bankId"
+      group by month_bank, "Balance"."amount", "Bank"."name"
     `
 
     return result
