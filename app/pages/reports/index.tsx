@@ -6,6 +6,7 @@ export function Reports() {
 			<ul>
 				<li><a href="/reports/evolution_balances">Evolution Balances</a></li>
 				<li><a href="/reports/patrimony">Patrimony</a></li>
+				<li><a href="/reports/timeline">Timeline</a></li>
 			</ul>
 		</MainWithHeader>
 	)
