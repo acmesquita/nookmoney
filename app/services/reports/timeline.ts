@@ -20,8 +20,8 @@ export class Timeline {
         sum("Balance"."amount")
       from "Balance"
         inner join "Bank" on "Bank".id = "Balance"."bankId"
-      group by "Balance"."createdAt", "Bank"."name"
-      order by "Balance"."createdAt" desc
+      group by to_char("Balance"."createdAt", 'MM/YYYY'), "Bank"."name"
+      order by to_char("Balance"."createdAt", 'MM/YYYY') desc
     `
 
     return result
