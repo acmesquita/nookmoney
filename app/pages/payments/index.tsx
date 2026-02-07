@@ -1,5 +1,5 @@
 import type { Payment } from "@prisma/client";
-import { useNavigate } from "@remix-run/react";
+import { Link, useNavigate } from "@remix-run/react";
 import { MainWithHeader } from "~/components/page_header";
 import { formateDate, formatMonth } from "~/utils/pages/format_date";
 import { formatMoney } from "~/utils/pages/format_money";
@@ -77,11 +77,9 @@ export function Payments({ payments, infos }: Props) {
 							<td>{formateDate(payment.dueDate)}</td>
 							<td>{formatMoney(Number(payment.amount))}</td>
 							<td className="actions">
-								<form action={`${payment.id}/edit`} method="post">
-									<button type="submit" className="btn btn-secundary">
-										Edit
-									</button>
-								</form>
+								<Link to={`/payments/${payment.id}/edit`} className="btn btn-secundary">
+									Edit
+								</Link>
 								{payment.paid ? (
 									<form>
 										<button disabled className="btn btn-disbled" type="submit">Paid</button>

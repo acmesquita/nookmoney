@@ -83,3 +83,9 @@ td.actions {
   align-items: center;
   justify-content: flex-start;
 }
+
+td.actions a,
+td.actions button {
+  flex: 0 0 auto;
+  max-width: fit-content;
+}

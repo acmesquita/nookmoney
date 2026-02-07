@@ -51,7 +51,7 @@ describe('getInfoToDashboard', () => {
 
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
-        currentMonth: new Date(),
+        currentMonth: new Date(2022, 10, 1),
         _sum: {
           amount: new Decimal(1000)
         }
@@ -154,7 +154,7 @@ describe('getInfoToDashboard', () => {
 
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
-        currentMonth: new Date(),
+        currentMonth: new Date(2022, 10, 1),
         _sum: {
           amount: new Decimal(0)
         }
@@ -257,7 +257,7 @@ describe('getInfoToDashboard', () => {
 
       // @ts-ignore
       jest.spyOn(prismaMock.payment, 'groupBy').mockResolvedValue([{
-        currentMonth: new Date(),
+        currentMonth: new Date(2022, 10, 1),
         _sum: {
           amount: new Decimal(0)
         }

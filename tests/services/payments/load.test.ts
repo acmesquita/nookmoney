@@ -75,4 +75,43 @@ describe('Load Payments', () => {
 
     expect(result).toHaveLength(2)
   })
+
+  it('when call with id and userId, finds payment and returns the record', async () => {
+    const payment = {
+      id: 'payment_id',
+      currentMonth: new Date('2024-01-01'),
+      category: 'casa',
+      description: 'Aluguel',
+      dueDate: new Date('2024-01-10'),
+      amount: new Decimal(1500),
+      paid: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      userId: 'valid_user_id',
+    }
+    prismaMock.payment.findFirst.mockResolvedValue(payment)
+
+    const result = await sut.execute({ id: 'payment_id', userId: 'valid_user_id' })
+
+    expect(result).toEqual(payment)
+    expect(prismaMock.payment.findFirst).toHaveBeenCalledWith({
+      where: { id: 'payment_id', userId: 'valid_user_id' },
+    })
+  })
+
+  it('when call with id that does not exist, returns null', async () => {
+    prismaMock.payment.findFirst.mockResolvedValue(null)
+
+    const result = await sut.execute({ id: 'non_existent_id', userId: 'valid_user_id' })
+
+    expect(result).toBeNull()
+  })
+
+  it('when call with userId that is not owner, returns null', async () => {
+    prismaMock.payment.findFirst.mockResolvedValue(null)
+
+    const result = await sut.execute({ id: 'payment_id', userId: 'other_user_id' })
+
+    expect(result).toBeNull()
+  })
 })
