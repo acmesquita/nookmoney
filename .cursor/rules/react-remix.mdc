@@ -1,0 +1,28 @@
+---
+description: React and Remix patterns for routes and components
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# React & Remix Patterns
+
+## Components
+
+- Prefer functional components.
+- Colocate component styles: `app/components/<name>/index.tsx` + `styles.css`.
+- Use the `clsx` package for conditional class names when needed.
+
+## Remix
+
+- Routes live in `app/routes/`; use `$param` for dynamic segments (e.g. `$bankId.tsx`).
+- Use `loader` / `action` for data and mutations; keep heavy logic in `app/services/`.
+- Auth routes are under `routes/__auth/`.
+
+## Forms & validation
+
+- Use `react-hook-form` and `remix-forms` with Zod where applicable.
+- Validate in actions and return field errors for UX.
+
+## Imports
+
+- Use path alias: `import x from '~/components/...'`, `import y from '~/services/...'`.

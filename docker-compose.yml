@@ -1,8 +1,28 @@
-version: '3.5'
-
 services:
-  postgres:
-    container_name: db
+  app:
+    container_name: app
+    image: node:16
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - db
+      - pgadmin
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/postgres
+      - SESSION_SECRET=${SESSION_SECRET:-secret}
+      - NODE_ENV=${NODE_ENV:-development}
+    command: "npm run dev"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+  db:
     image: postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}

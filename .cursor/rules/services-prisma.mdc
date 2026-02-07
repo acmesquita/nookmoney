@@ -1,0 +1,23 @@
+---
+description: Service layer and Prisma usage
+globs: "app/services/**/*.ts"
+alwaysApply: false
+---
+
+# Services & Prisma
+
+## Services (`app/services/`)
+
+- One folder per domain (e.g. `banks/`, `payments/`, `user/`).
+- Typical files: `create.ts`, `load.ts`, `index.ts` (re-exports or list operations).
+- Services call Prisma via `app/config/database/db.server.ts`; no raw DB access outside config/services.
+- Keep functions small and focused; orchestrate in the service, not in routes.
+
+## Prisma
+
+- Schema in `prisma/schema.prisma`; migrations with `npm run db:migrate:dev` or `db:migrate:deploy`.
+- Use Prisma client from the shared db module; do not instantiate `PrismaClient` in services.
+
+## Tests
+
+- Mirror structure under `tests/services/`; use Jest and mocks for DB where appropriate.

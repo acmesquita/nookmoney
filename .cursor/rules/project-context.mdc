@@ -1,0 +1,33 @@
+---
+description: Nookmoney project stack and structure
+alwaysApply: true
+---
+
+# Nookmoney – Project Context
+
+## Stack
+
+- **Framework**: Remix (v1.x), React 18
+- **Database**: Prisma (PostgreSQL)
+- **Validation**: Zod, domain-functions, remix-forms
+- **Tests**: Jest, Testing Library
+- **Path alias**: `~/*` → `./app/*`, `~tests/*` → `./tests/*`
+
+## App Structure
+
+- `app/routes/` – Remix file-based routes (use `$param` for dynamic segments)
+- `app/pages/` – Page components / UI used by routes
+- `app/services/` – Business logic, DB access (e.g. `create.ts`, `load.ts`, `index.ts`)
+- `app/components/` – Reusable UI; each component can have `index.tsx` + `styles.css`
+- `app/config/` – DB (`db.server.ts`), session; `.server.ts` = server-only
+- `app/utils/` – Pure helpers (format_date, format_money, parse_category, etc.)
+- `app/styles/` – Global and page-specific CSS
+- `app/errors/` – Custom errors (e.g. `invalid-params.error.ts`)
+- `tests/` – Mirrors `app/` (components, config, services, utils)
+
+## Conventions
+
+- Use `~/*` for app imports (e.g. `import { x } from '~/services/banks'`).
+- Server-only modules: suffix with `.server.ts` or keep under `config/`.
+- Keep services thin: orchestrate domain logic; use Prisma in services or config.
+- New features: add route, page (if needed), service functions, and tests under the same path in `tests/`.
